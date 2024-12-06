@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.card-panel {
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.center-align {
+  text-align: center;
+}
+
+.btn {
+  margin-top: 10px;
+}
