@@ -1,27 +1,52 @@
-import React, { useState } from 'react';
-import FileUpload from './components/FileUpload';
-import ChatWindow from './components/ChatWindow';
+// Frontend enhancement with Materialize for SESMag Application
+
+import React from 'react';
+import 'materialize-css/dist/css/materialize.min.css';
+import M from 'materialize-css';
+import './App.css';
 
 const App = () => {
-  const [responses, setResponses] = useState([]);
+    React.useEffect(() => {     // Initialize Materialize components
+        M.AutoInit();
+    }, []);
 
-  const handleFileUploaded = (data) => {
-    setResponses((prev) => [...prev, data.message]);
-  };
+    return (
+        <div className="container">
+            <h1 className="center-align">SESMag Review by Fee</h1>
+            
+            {/* File Upload Section */}
+            <div className="row">
+                <form className="col s12">
+                    <div className="file-field input-field">
+                        <div className="btn">
+                            <span>Upload PDF</span>
+                            <input type="file" />
+                        </div>
+                        <div className="file-path-wrapper">
+                            <input className="file-path validate" type="text" placeholder="Upload your PDF file" />
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-  return (
-    <div className="container">
-      <h2 className="center-align">SESMag AI Agent</h2>
-      <div className="row">
-        <div className="col s12 m6">
-          <FileUpload onFileUploaded={handleFileUploaded} />
+            {/* Chat Window */}
+            <div className="row">
+                <div className="col s12">
+                    <div className="card">
+                        <div className="card-content">
+                            <span className="card-title">Chat with Fee</span>
+                            <p>Start uploading your document to get a response from Fee!</p>
+                        </div>
+                        <div className="card-action">
+                            <button className="btn waves-effect waves-light" type="submit" name="action">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="col s12 m6">
-          <ChatWindow responses={responses} />
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default App;
