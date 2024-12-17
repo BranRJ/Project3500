@@ -4,9 +4,9 @@ const { Client } = require('pg');
 const client = new Client({
   host: 'localhost',
   port: 5432,
-  user: 'brandon',     // Replace with your username
-  password: 'faceofspace', // Replace with your password
-  database: 'sesmag', // Replace with your database name
+  user: 'brandon',
+  password: 'faceofspace',
+  database: 'sesmag',
 });
 
 async function connectToDatabase() {
